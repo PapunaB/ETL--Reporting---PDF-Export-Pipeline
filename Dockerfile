@@ -16,6 +16,10 @@ COPY . .
 # Create directories for outputs
 RUN mkdir -p /app/reports
 
+# Install the package in development mode
+# This makes the etl_pipeline package importable
+RUN pip install -e .
+
 # Set environment variables
 ENV DB_TYPE=postgresql
 ENV PG_HOST=postgres
@@ -26,4 +30,4 @@ ENV PG_PASSWORD=password
 ENV REPORTS_DIR=/app/reports
 
 # Command to run the ETL pipeline
-CMD ["python", "etl_pipeline.py"]
+CMD ["python", "src/main.py"]

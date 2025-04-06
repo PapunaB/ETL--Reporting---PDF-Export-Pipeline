@@ -89,11 +89,8 @@ Create a `.env` file based on `.env.example` with your configuration:
 
 ```
 # Database Configuration
-# Set DB_TYPE to 'sqlite' or 'postgresql'
+# Set DB_TYPE to 'postgresql'
 DB_TYPE=postgresql
-
-# SQLite Configuration
-SQLITE_DB_PATH=sales_database.sqlite
 
 # PostgreSQL Configuration
 PG_HOST=localhost
@@ -180,7 +177,3 @@ docker-compose up etl
 # Run tests
 pytest
 ```
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
