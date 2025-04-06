@@ -1,0 +1,13 @@
+order_id,affiliate_name,sales_amount,currency,order_date,category
+101,John Doe,150,EUR,2024-05-01,Electronics
+102,Jane Smith,,USD,2024-05-02,Fashion
+103,Alice Brown,180,,2024-05-03,Electronics
+104,Bob White,210,USD,,Health
+105,,250,EUR,2024-05-05,Fashion
+106,Susan Black,190,GBP,2024-05-06,
+107,Linda White,300,USD,2024-05-07,Electronics
+108,James Grey,120,EUR,2024-05-08,Fashion
+109,John Doe,175,USD,2024-05-09,
+110,Alice Brown,,GBP,2024-05-10,Electronics
+111,Jane Smith,230,EUR,2024-05-11,Fashion
+112,Bob White,220,USD,2024-05-12,Health

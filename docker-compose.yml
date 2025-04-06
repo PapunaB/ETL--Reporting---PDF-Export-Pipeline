@@ -1,0 +1,38 @@
+version: '3'
+
+services:
+  postgres:
+    image: postgres:13
+    environment:
+      - POSTGRES_DB=sales
+      - POSTGRES_USER=postgres
+      - POSTGRES_PASSWORD=password
+    volumes:
+      - postgres_data:/var/lib/postgresql/data
+    ports:
+      - "5432:5432"
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  etl:
+    build: .
+    depends_on:
+      postgres:
+        condition: service_healthy
+    volumes:
+      - ./reports:/app/reports
+      - ./sales_data.csv:/app/sales_data.csv
+    environment:
+      - DB_TYPE=postgresql
+      - PG_HOST=postgres
+      - PG_PORT=5432
+      - PG_DATABASE=sales
+      - PG_USER=postgres
+      - PG_PASSWORD=password
+      - REPORTS_DIR=/app/reports
+
+volumes:
+  postgres_data:
