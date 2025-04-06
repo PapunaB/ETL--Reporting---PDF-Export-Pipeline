@@ -61,8 +61,7 @@ etl_pipeline/
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/yourusername/etl-pipeline.git
-   cd etl-pipeline
+   git clone --
    ```
 
 2. Create and activate a virtual environment:
@@ -91,9 +90,6 @@ Create a `.env` file based on `.env.example` with your configuration:
 # Database Configuration
 # Set DB_TYPE to 'sqlite' or 'postgresql'
 DB_TYPE=postgresql
-
-# SQLite Configuration
-SQLITE_DB_PATH=sales_database.sqlite
 
 # PostgreSQL Configuration
 PG_HOST=localhost
